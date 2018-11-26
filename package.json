@@ -4,7 +4,9 @@
   "description": "_Introduction_",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "resetDb": "node resetDb.js",
+    "start": "node main.js",
+    "debug": "node --inspect-brk main.js"
   },
   "repository": {
     "type": "git",
