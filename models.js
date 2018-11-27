@@ -33,6 +33,9 @@ const Star = sequelize.define('star', {
   size: Sequelize.STRING
 });
 
+Planet.belongsTo(Star);
+Star.hasMany(Planet);
+
 module.exports = {
   sequelize,
   Planet,
