@@ -51,6 +51,15 @@ async function createStar() {
   })
 }
 
+async function changeStar() {
+  const sun = await Star.findOne({
+    where: { name: 'Sun'}
+  });
+  sun.size = 'Pretty big';
+  await sun.save();
+  console.log(sun.dataValues);
+}
+
 async function run() {
   try {
     await createPlanets();
@@ -59,6 +68,7 @@ async function run() {
     await deletePlanet();
     await printPlanets();
     await createStar();
+    await changeStar();
   } catch (e) {
     console.error(e);
   }
