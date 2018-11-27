@@ -29,7 +29,11 @@ async function printPlanets() {
 }
 
 async function changeColor() {
-  console.log('I should change the color of a planet');
+  const mercury = await Planet.findOne({
+    where: { name: 'Mercury' }
+  });
+  mercury.color = 'grey';
+  await mercury.save();
 }
 
 async function deletePlanet() {
