@@ -22,9 +22,13 @@ const sequelize = new Sequelize({
 //
 // testConnection();
 
-const Example = sequelize.define('example', {})
+const Planet = sequelize.define('planet', {
+  name: Sequelize.STRING,
+  num_moons: Sequelize.INTEGER,
+  color: Sequelize.STRING
+})
 
 module.exports = {
   sequelize,
-  Example
+  Planet
 }
