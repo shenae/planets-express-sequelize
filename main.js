@@ -1,7 +1,26 @@
 const { Planet } = require('./models');
 
 async function createPlanets() {
-  console.log('I should create three planets');
+  try {
+    await Planet.bulkCreate([
+      {
+        name: 'Earth',
+        num_moons: 3,
+        color: 'blue'
+      },
+      {
+        name: 'Mars',
+        num_moons: 2,
+        color: 'red'
+      },
+      {
+        name: 'Mercury',
+        num_moons: 0
+      }
+    ]);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 async function printPlanets() {
