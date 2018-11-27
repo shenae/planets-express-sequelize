@@ -33,11 +33,16 @@ const Star = sequelize.define('star', {
   size: Sequelize.STRING
 });
 
-Planet.belongsTo(Star);
-Star.hasMany(Planet);
+const StarSystem = sequelize.define('star_system', {
+  name: Sequelize.STRING
+})
+
+Planet.belongsToMany(Star, { through: StarSystem });
+Star.belongsToMany(Planet, { through: StarSystem });
 
 module.exports = {
   sequelize,
   Planet,
-  Star
+  Star,
+  StarSystem
 }
