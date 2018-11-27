@@ -1,4 +1,4 @@
-const { Planet, Star, StarSystem } = require('./models');
+const { Planet, Star } = require('./models');
 
 async function createPlanets() {
   await Planet.destroy({ where: {}});
@@ -64,8 +64,10 @@ async function associatePlanetsAndStar() {
     where: { name: 'Sun'}
   });
   const planets = await Planet.findAll();
-  await sun.setPlanets(planets, { through: { name: 'Solar System' }});
-  const associatedPlanets = await Planet.findAll();
+  await sun.setPlanets(planets);
+  const associatedPlanets = await Planet.findAll({
+    include: Star
+  });
   console.log(associatedPlanets.map(planet => planet.get({plain: true})));
 }
 

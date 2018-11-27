@@ -39,6 +39,5 @@ Star.belongsToMany(Planet, { through: 'planets_stars' });
 module.exports = {
   sequelize,
   Planet,
-  Star,
-  StarSystem
+  Star
 }
