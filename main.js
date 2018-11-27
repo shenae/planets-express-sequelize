@@ -42,11 +42,12 @@ async function deletePlanet() {
 }
 
 async function run() {
-  // await createPlanets();
+  await createPlanets();
   await printPlanets();
   await changeColor();
   await deletePlanet();
   await printPlanets();
+  process.exit();
 }
 
 run();
