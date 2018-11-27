@@ -38,7 +38,9 @@ async function changeColor() {
 }
 
 async function deletePlanet() {
-  console.log('I should delete a planet');
+  await Planet.destroy({
+    where: { name: 'Mercury'}
+  });
 }
 
 async function run() {
