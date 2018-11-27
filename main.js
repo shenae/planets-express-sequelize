@@ -44,11 +44,16 @@ async function deletePlanet() {
 }
 
 async function run() {
-  await createPlanets();
-  await printPlanets();
-  await changeColor();
-  await deletePlanet();
-  await printPlanets();
+  try {
+    await createPlanets();
+    await printPlanets();
+    await changeColor();
+    await deletePlanet();
+    await printPlanets();
+    await createStar();
+  } catch (e) {
+    console.error(e);
+  }
   process.exit();
 }
 
