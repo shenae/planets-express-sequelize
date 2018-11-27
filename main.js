@@ -1,4 +1,4 @@
-const { Planet } = require('./models');
+const { Planet, Star } = require('./models');
 
 async function createPlanets() {
   await Planet.destroy({ where: {}});
@@ -41,6 +41,14 @@ async function deletePlanet() {
   await Planet.destroy({
     where: { name: 'Mercury'}
   });
+}
+
+async function createStar() {
+  await Star.destroy({ where: {}});
+  await Star.create({
+    name: 'Sun',
+    size: 'yellow dwarf'
+  })
 }
 
 async function run() {
