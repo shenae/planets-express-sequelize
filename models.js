@@ -26,9 +26,15 @@ const Planet = sequelize.define('planet', {
   name: Sequelize.STRING,
   num_moons: Sequelize.INTEGER,
   color: Sequelize.STRING
-})
+});
+
+const Star = sequelize.define('star', {
+  name: Sequelize.STRING,
+  size: Sequelize.STRING
+});
 
 module.exports = {
   sequelize,
-  Planet
+  Planet,
+  Star
 }
