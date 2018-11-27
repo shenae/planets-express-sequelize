@@ -24,7 +24,8 @@ async function createPlanets() {
 }
 
 async function printPlanets() {
-  console.log('I should query for all planets and print the resulting datavalues');
+  const planets = await Planet.findAll();
+  console.log(planets.map(({dataValues}) => dataValues)); // planet => planet.dataValues
 }
 
 async function changeColor() {
@@ -36,7 +37,7 @@ async function deletePlanet() {
 }
 
 async function run() {
-  await createPlanets();
+  // await createPlanets();
   await printPlanets();
   await changeColor();
   await deletePlanet();
