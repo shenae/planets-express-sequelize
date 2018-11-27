@@ -57,7 +57,18 @@ async function changeStar() {
   });
   sun.size = 'Pretty big';
   await sun.save();
-  console.log(sun.dataValues);
+}
+
+async function associatePlanetsAndStar() {
+  const sun = await Star.findOne({
+    where: { name: 'Sun'}
+  });
+  const planets = await Planet.findAll();
+  await sun.setPlanets(planets);
+  const associatedPlanets = await Planet.findAll({
+    include: Star
+  });
+  console.log(associatedPlanets.map(planet => planet.get({plain: true})));
 }
 
 async function run() {
@@ -69,6 +80,7 @@ async function run() {
     await printPlanets();
     await createStar();
     await changeStar();
+    await associatePlanetsAndStar();
   } catch (e) {
     console.error(e);
   }
