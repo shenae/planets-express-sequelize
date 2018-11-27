@@ -1,6 +1,7 @@
 const { Planet } = require('./models');
 
 async function createPlanets() {
+  await Planet.destroy({ where: {}});
   try {
     await Planet.bulkCreate([
       {
