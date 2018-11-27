@@ -1,4 +1,4 @@
-const { Planet, Star } = require('./models');
+const { Planet, Star, StarSystem } = require('./models');
 
 async function createPlanets() {
   await Planet.destroy({ where: {}});
@@ -64,11 +64,50 @@ async function associatePlanetsAndStar() {
     where: { name: 'Sun'}
   });
   const planets = await Planet.findAll();
-  await sun.setPlanets(planets);
-  const associatedPlanets = await Planet.findAll({
-    include: Star
-  });
+  await sun.setPlanets(planets, { through: { name: 'Solar System' }});
+  const associatedPlanets = await Planet.findAll();
   console.log(associatedPlanets.map(planet => planet.get({plain: true})));
+}
+
+async function associatePlanetsAndStars() {
+  await Star.bulkCreate([
+    {
+      name: 'Beta Cygni A',
+      size: 'Huge'
+    },
+    {
+      name: 'Beta Cygni B',
+      size: 'Not quite as huge but still pretty big'
+    }
+  ]);
+  await Planet.bulkCreate([
+    {
+      name: 'Kepler152b',
+      num_moons: 5,
+      color: 'blue'
+    },
+    {
+      name: 'Kepler152c',
+      num_moons: 25,
+      color: 'blue'
+    }
+  ]);
+  const starsPromise = Star.findAll({
+    where: {
+      name: {
+        [Op.or]: ['Beta Cygni B', 'Beta Cygni A']
+      }
+    }
+  });
+  const planetsPromise = Planet.findAll({
+    where: {
+      name: {
+        [Op.or]: ['Kepler152b', 'Kepler152c']
+      }
+    }
+  });
+  const [stars, planets] = await Promise.all([starsPromise, planetsPromise]);
+  await Promise.all(stars.map(s => s.setPlanets(planets)));
 }
 
 async function run() {
