@@ -6,7 +6,7 @@ For this exercise you will be implementing a planet database and data layer for 
 
 ### Setup
 - Fork and clone this repo
-- `cd` into the repo and run `createdb planets_sequelize_db`
+- `cd` into the repo and run `createdb solar_system_db`
 - Take a moment to glance over the provided files.  There is a skeleton `models.js` file, a `resetDb` script, and a few scripts in `package.json`
 - Lastly, run `npm install`
 
