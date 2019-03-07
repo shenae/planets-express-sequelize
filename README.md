@@ -32,7 +32,8 @@ In `scratch.js`:
 1. Did you import the planet model?
 1. Once the model is correct, `touch server.js` file:
     - require express.
-    - require morgan and bodyParser.
+    - require morgan and body-parser.
+    - require axios.
     - have the app listen on port 3000.
     - use `res.send` to show 'Hello Friend' on the `/` path.
     - `npm start`
@@ -46,8 +47,10 @@ In `scratch.js`:
 ### References
 - [Express Lesson](https://git.generalassemb.ly/wdi-nyc-bananas/js-express-intro-lesson)
 - [Express docs](https://expressjs.com/)
+- [npm express](https://www.npmjs.com/package/express)
 - [npm morgan](https://www.npmjs.com/package/morgan)
 - [npm bodyparser](https://www.npmjs.com/package/body-parser)
+- [Posting with axios from class](https://gist.git.generalassemb.ly/jkarlin929/e536dfd4c07f954446077deb45dd2d16)
 
 ##### Further Reading (for bonus/tomorrow)
 - [Sequelize Associations](http://docs.sequelizejs.com/manual/tutorial/associations.html)
