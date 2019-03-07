@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize({
-  database: 'planets_sequelize_db',
+  database: '',
   dialect: 'postgres',
   operatorsAliases: false,
   define: {
@@ -10,7 +10,13 @@ const sequelize = new Sequelize({
 });
 
 
+//Create your models here:
+
+
+
+
+sequelize.sync();
 
 module.exports = {
-  sequelize,
+
 }

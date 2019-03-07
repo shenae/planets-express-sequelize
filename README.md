@@ -7,28 +7,29 @@ For this exercise you will be implementing a planet database and data layer for 
 ### Setup
 - Fork and clone this repo
 - `cd` into the repo and run `createdb solar_system_db`
-- Take a moment to glance over the provided files.  There is a skeleton `models.js` file, a `resetDb` script, and a few scripts in `package.json`
-- Lastly, run `npm install`
+- Take a moment to glance over the provided files.  There is a `models.js` file (add the database name), a `resetDb` script, and scripts in `package.json`, feel free to add your own.
+- Lastly, run `npm install`.
 
 ## The Model
-
 To start, define a `Planet` model inside `models.js` with three columns:
-- name
-- num_moons
-- color
+- name (text)
+- num_moons (integer)
+- color (text)
 
-**Don't forget to add `Planet` to the exports at the bottom of the file.**
+**Don't forget to add `Planet` to the exports at the bottom of your file.**
 
+### Planet API
 ```
 BASE_URL: 'https://wdi-nyc-planets-api.herokuapp.com'
 
-Endpoints: `/planets` and `/planets/random`
+Endpoints: /planets and /planets/random
 
 ```
+## Deliverables:
 
 In `scratch.js`:
 1. Test your models, by creating a planet to make sure everything is functioning the way you want?
-1. Did you import the planet model!
+1. Did you import the planet model?
 1. Once the model is correct, `touch server.js` file:
     - require express.
     - have the app listen on port 3000.
@@ -41,22 +42,28 @@ In `scratch.js`:
     - the `POST` request should use `create` in sequelize.
     - the `DELETE` request should use `destroy` in sequelize.
 
+### References
+- [Express Lesson](https://git.generalassemb.ly/wdi-nyc-bananas/js-express-intro-lesson)
+- [Express docs](https://expressjs.com/)
+
+##### Further Reading (for bonus/tomorrow)
+- [Sequelize Associations](http://docs.sequelizejs.com/manual/tutorial/associations.html)
+
 
 #### Bonus
 
 1. Use the random endpoint (`/planet/random`) to `GET`
-a random planet from the API.
+a random planet from the API and display it in the browser.
 
 
 #### Super(nova) Bonus
 
-1. Create a model for a star with attributes name and size (and others if you would like)
-2. Create a star
+1. Create a model for stars with attributes name, size and life_cycle (i.e., supernova, white dwarf).
+2. Create a bunch of stars using sequelize.
 3. Write a `GET` request to return all the stars you created.
+4. Use sequelize associations to relate planets and stars (the subject of our lesson tomorrow).
 
-Use sequelize associations to relate planets and stars (the subject of our lesson tomorrow).
-
-##### Relax with some planet gifs!
+#### Relax with some planet gifs!
 ![](https://media.giphy.com/media/l4FGJQvXJdKsBboha/giphy.gif)
 
 ![](https://media.giphy.com/media/l0He3o8pL9AebplFm/giphy.gif)
