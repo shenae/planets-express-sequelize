@@ -9,9 +9,8 @@ const sequelize = new Sequelize({
   }
 });
 
-const Example = sequelize.define('example', {})
+
 
 module.exports = {
   sequelize,
-  Example
 }
