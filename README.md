@@ -2,7 +2,7 @@
 
 _Introduction_
 
-For this exercise you will be implementing a `Planet` database and data layer for creating and querying different planets.
+For this exercise you will be implementing a planet database and data layer for creating and querying different planets.
 
 ### Setup
 - Fork and clone this repo
