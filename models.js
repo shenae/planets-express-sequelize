@@ -9,19 +9,6 @@ const sequelize = new Sequelize({
   }
 });
 
-// async function testConnection() {
-//   try {
-//     await sequelize.authenticate()
-//     console.log('Connection has been established successfully');
-//   } catch (e) {
-//     console.error(e);
-//   } finally {
-//     process.exit();
-//   }
-// }
-//
-// testConnection();
-
 const Example = sequelize.define('example', {})
 
 module.exports = {
