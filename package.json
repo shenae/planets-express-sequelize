@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "resetDb": "node resetDb.js",
-    "start": "node main.js",
+    "scratch": "node scratch.js",
+    "start": "nodemon main.js",
     "debug": "node --inspect-brk main.js"
   },
   "repository": {
@@ -16,6 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
     "pg": "^7.6.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.41.2"
