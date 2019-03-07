@@ -40,9 +40,9 @@ In `scratch.js`:
 1. Next, make planets routes that should return the planets with a `GET` request.
     - the first request should `findAll` planets.
     - the following request should `findOne` planet.
-1. Now, use `POST` and `DELETE` to post and delete a planet.
+1. Now, use `POST` to post a planet.
     - the `POST` request should post a new planet.
-    - the `DELETE` request should delete a planet of your choice.
+    - you can create a `client.js` file and make an axios call there, like in class, or do all your posting in `server.js`.
 
 ### References
 - [Express Lesson](https://git.generalassemb.ly/wdi-nyc-bananas/js-express-intro-lesson)
@@ -60,6 +60,7 @@ In `scratch.js`:
 
 1. Use the random endpoint (`/planet/random`) to `GET`
 a random planet from the API and display it in the browser.
+1. Delete a planet. The `DELETE` request should delete a planet of your choice.
 
 
 #### Super(nova) Bonus
