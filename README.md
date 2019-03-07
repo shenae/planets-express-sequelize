@@ -19,7 +19,7 @@ To start, define a `Planet` model inside `models.js` with three columns:
 
 Pick sensible types for each of these columns.  Don't forget to add `Planet` to the exports at the bottom of the file.
 
-In main.js:
+In `main.js`:
 
 ### Deliverables
 
@@ -27,7 +27,8 @@ In main.js:
 2. Print all of the planets
 3. Change the color of one of the planets
 4. Delete a planet
-5. Print all of the planets
+5. Print all of the planets where the moons are less than 100.
+  - comment out your function calls at the end in the main function.
 
 #### Bonus
 
