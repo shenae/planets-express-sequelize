@@ -6,7 +6,7 @@ For this exercise you will be implementing a planet database and data layer for 
 
 ### Setup
 - Fork and clone this repo
-- `cd` into the repo and run `createdb solar_system_db`
+- `cd` into the repo and run `createdb solar_system_db` in the terminal.
 - Take a moment to glance over the provided files.  There is a `models.js` file (add the database name), a `resetDb` script, and scripts in `package.json`, feel free to add your own.
 - Lastly, run `npm install`.
 
@@ -39,8 +39,8 @@ In `scratch.js`:
     - the first request should `findAll` planets.
     - the following request should `findOne` planet.
 1. Now, use `POST` and `DELETE` to post and delete a planet.
-    - the `POST` request should use `create` in sequelize.
-    - the `DELETE` request should use `destroy` in sequelize.
+    - the `POST` request should post a new planet.
+    - the `DELETE` request should delete a planet of your choice.
 
 ### References
 - [Express Lesson](https://git.generalassemb.ly/wdi-nyc-bananas/js-express-intro-lesson)
