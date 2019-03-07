@@ -23,10 +23,10 @@ In `main.js`:
 
 ### Deliverables
 
-1. Create three new planets
-2. Print all of the planets
-3. Change the color of one of the planets
-4. Delete a planet
+1. Create three new planets.
+2. Print all of the planets.
+3. Change the color of one of the planets.
+4. Delete a planet with a specific id.
 5. Print all of the planets where the moons are less than 100.
   - comment out your function calls at the end in the main function.
 
