@@ -1,8 +1,8 @@
-# Planet Sequelize
+# Planets API with Sequelize and Express!
 
 _Introduction_
 
-For this exercise you will be implementing a planet database and data layer for creating and querying different planets.
+For this exercise you will be implementing a planet database and data layer for creating and querying different planets. Then sending json to the browser.
 
 ### Setup
 - Fork and clone this repo
@@ -19,7 +19,7 @@ To start, define a `Planet` model inside `models.js` with three columns:
 
 Pick sensible types for each of these columns.  Don't forget to add `Planet` to the exports at the bottom of the file.
 
-In `main.js`:
+In `scratch.js`:
 
 ### Deliverables
 
@@ -32,10 +32,12 @@ In `main.js`:
 
 #### Bonus
 
+
+
+##### Super Bonus
+
 1. Create a model for a star with attributes name and size (and others if you would like)
 2. Create a star
 3. Change an attribute of the star
-
-##### Super Bonus
 
 Use sequelize associations to relate planets and stars (the subject of our lesson tomorrow).
