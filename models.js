@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize({
-  database: '',
+  database: 'solar_system_db',
   dialect: 'postgres',
   operatorsAliases: false,
   define: {
@@ -11,12 +11,13 @@ const sequelize = new Sequelize({
 
 
 //Create your models here:
-
-
-
-
-sequelize.sync();
+const Planet = sequelize.define('planets', {
+  name: Sequelize.TEXT,
+  num_moons: Sequelize.INTEGER,
+  color: Sequelize.TEXT
+});
 
 module.exports = {
-
-}
+  sequelize,
+  Planet,
+};

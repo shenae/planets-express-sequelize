@@ -6,7 +6,7 @@
   "scripts": {
     "resetDb": "node resetDb.js",
     "scratch": "node scratch.js",
-    "start": "nodemon main.js",
+    "start": "nodemon server.js",
     "debug": "node --inspect-brk main.js"
   },
   "repository": {
