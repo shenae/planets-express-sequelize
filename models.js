@@ -11,13 +11,8 @@ const sequelize = new Sequelize({
 
 
 //Create your models here:
-const Planet = sequelize.define('planets', {
-  name: Sequelize.TEXT,
-  num_moons: Sequelize.INTEGER,
-  color: Sequelize.TEXT
-});
+
 
 module.exports = {
-  sequelize,
-  Planet,
+
 };
