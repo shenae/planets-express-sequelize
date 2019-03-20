@@ -16,7 +16,7 @@ To start, define a `Planet` model inside `models.js` with three columns:
 - num_moons (integer)
 - color (text)
 
-**Don't forget to add `Planet` to the exports at the bottom of your file.**
+**Don't forget to add `Planet` and `sequelize` to the exports at the bottom of your file.**
 
 ### Planet API
 ```
