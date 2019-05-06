@@ -16,9 +16,9 @@ To start, define a `Planet` model inside `models.js` with three columns:
 - num_moons (integer)
 - color (text)
 
-**Don't forget to add `Planet` and `sequelize` to the exports at the bottom of your file.**
+**Don't forget to add `Planet` and `sequelize` to the exports at the bottom of your models file.**
 
-### Planet API
+### Planet API (Use this as a reference for what `your` completed API will function like)
 ```
 BASE_URL: 'https://wdi-nyc-planets-api.herokuapp.com'
 
@@ -26,23 +26,19 @@ Endpoints: /planets and /planets/random
 
 ```
 ## Deliverables:
-
-In `scratch.js`:
-1. Test your models, by creating a planet to make sure everything is functioning the way you want?
-1. Did you import the planet model?
+1. Touch a `seed.js` file, and use it to `bulkCreate` all the planets you got from 'https://wdi-nyc-planets-api.herokuapp.com/planets'
+    - Make sure you sync your db with the data.
 1. Once the model is correct, `touch server.js` file:
     - require express.
     - require morgan and body-parser.
-    - require axios.
     - have the app listen on port 3000.
-    - use `res.send` to show 'Hello Friend' on the `/` path.
-    - `npm start`
-1. Next, make planets routes that should return the planets with a `GET` request.
+    - use `res.send` to show 'Hello Friend' on the `/` path as a test response.
+    - start your server with `npm start`
+1. Add a `planetRouter` file. Make sure you `require` and `use` it in `server.js`!
+1. Next, add a route that should return `all` planets, and a route that returns `one` planet with a `GET` request.
     - the first request should `findAll` planets.
     - the following request should `findOne` planet.
-1. Now, use `POST` to post a planet.
-    - the `POST` request should post a new planet.
-    - you can create a `client.js` file and make an axios call there, like in class, or do all your posting in `server.js`.
+1. Now, add a post route to `post` a new planet.
 
 ### References
 - [Express Lesson](https://git.generalassemb.ly/wdi-nyc-bananas/js-express-intro-lesson)
@@ -50,7 +46,6 @@ In `scratch.js`:
 - [npm express](https://www.npmjs.com/package/express)
 - [npm morgan](https://www.npmjs.com/package/morgan)
 - [npm bodyparser](https://www.npmjs.com/package/body-parser)
-- [Posting with axios from class](https://gist.git.generalassemb.ly/jkarlin929/e536dfd4c07f954446077deb45dd2d16)
 
 ##### Further Reading (for bonus/tomorrow)
 - [Sequelize Associations](http://docs.sequelizejs.com/manual/tutorial/associations.html)
@@ -58,8 +53,7 @@ In `scratch.js`:
 
 #### Bonus
 
-1. Use the random endpoint (`/planet/random`) to `GET`
-a random planet from the API and display it in the browser.
+1. Add a route with an endpoint: `/planet/random` to `GET` a random planet from your API and display it in the browser.
 1. Delete a planet. The `DELETE` request should delete a planet of your choice.
 
 
@@ -67,8 +61,14 @@ a random planet from the API and display it in the browser.
 
 1. Create a model for stars with attributes name, size and life_cycle (i.e., supernova, white dwarf).
 2. Create a bunch of stars using sequelize.
-3. Write a `GET` request to return all the stars you created.
-4. Use sequelize associations to relate planets and stars (the subject of our lesson tomorrow).
+3. Write a `GET` request to return all the stars `you created`.
+4. Use `eager loading` with sequelize (reference back to today's labs!).
+
+<details>
+    <summary>Where should this go?</summary>
+    We recommend using a /planets/stars/:planet_id route. Or something of the sort ;).
+</details>
+
 
 #### Relax with some planet gifs!
 ![](https://media.giphy.com/media/l4FGJQvXJdKsBboha/giphy.gif)
