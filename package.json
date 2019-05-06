@@ -6,8 +6,11 @@
   "scripts": {
     "resetDb": "node resetDb.js",
     "scratch": "node scratch.js",
-    "start": "nodemon server.js",
-    "debug": "node --inspect-brk main.js"
+    "dev": "nodemon server.js",
+    "debug": "node --inspect-brk main.js",
+    "db:init": "dropdb --if-exists solar_system_db && createdb solar_system_db",
+    "db:reset": "node resetDb.js",
+    "db:seed": "node seed.js"
   },
   "repository": {
     "type": "git",

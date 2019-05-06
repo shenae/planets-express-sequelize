@@ -1,9 +1,14 @@
-const { sequelize } = require('./models');
+const { db } = require('./models');
 
 async function resetDb() {
-  await sequelize.sync({force: true});
-  console.log('synced');
-  process.exit();
+  try {
+    await db.sync({force: true});
+    console.log('synced');
+  } catch (err) {
+    console.log('DB sync failed')
+  } finally {
+    await process.exit();
+  }
 }
 
 resetDb();
