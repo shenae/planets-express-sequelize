@@ -1,4 +1,4 @@
-const { db} = require('./models.js');
+const { db } = require('./models.js');
 
 const main = async () => {
     await db.sync({force: true});
