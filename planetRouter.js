@@ -1,12 +1,15 @@
 const express = require('express');
 const planetRouter = express.Router();
 const { Planet } = require('./models.js');
-const Sequelize = require('sequelize');
 const bodyParser = require('body-parser');
+const logger = require('morgan');
 
 planetRouter.use(bodyParser.json());
+//planetRouter.use(logger,('dev'));
 
-planetRouter.get('/allplanets', async (request, response) => {
+//planetRouter = express();
+
+planetRouter.get('/', async (request, response) => {
     try {
         const allThePlanets = await Planet.findAll();
         response.send(allThePlanets);
@@ -35,5 +38,5 @@ planetRouter.post('/createplanet', async (request, response) => {
     }
 });
 
-module.exports = planetRouter;
+module.exports = { planetRouter };
 
